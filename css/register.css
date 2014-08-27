@@ -1,0 +1,117 @@
+#register_wrapper
+{
+
+}
+#mode_form
+{
+
+}
+
+#show_suspended_sales_button
+{
+
+}
+
+#mode_form span
+{
+	font-weight:bold;
+}
+
+#add_item_form
+{
+	
+}
+
+#new_item_button_register
+{
+
+}
+
+
+
+#item_label,#customer_label
+{
+	font-weight:bold;
+}
+
+#add_item_form label
+{
+	margin: 0px 5px 0px 5px;
+}
+
+
+
+#overall_sale
+{
+
+	
+}
+
+#sale_details
+{
+	position:relative;
+	width:100%;
+	margin-top:5px;
+	border-top:2px solid #000;
+}
+
+#finish_sale
+{
+	position:relative;
+}
+
+#Payment_Types
+{
+	float:left;
+	width:100%;
+	margin-top:5px;
+	border-top:2px solid #000;
+	background-color:#DDD;
+	margin-bottom:0px;
+	clear:both;
+}
+
+#Cancel_sale
+{
+	float:left;
+	width:100%;
+	margin-top:5px;
+	clear:both;
+}
+#suspended_sales_table
+{
+	width:100%;
+}
+
+#credit_card_form fieldset 
+{
+	overflow: auto;
+	border: 0;
+	margin: 0;
+	padding: 0; 
+}
+
+#credit_card_form fieldset div 
+{
+	float: left; 
+}
+
+#credit_card_form fieldset.centered div 
+{
+	text-align: center; 
+}
+
+#credit_card_form label 
+{
+	display: block;
+	margin-bottom: 5px; 
+}
+
+#credit_card_form input.text 
+{
+	border: 1px solid #bfbab4;
+	margin: 0 4px 8px 0;
+}
+
+
+.panel-heading h3{margin: 0;padding: 0;text-align: center;}

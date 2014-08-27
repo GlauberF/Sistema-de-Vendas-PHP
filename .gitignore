@@ -1,0 +1,10 @@
+application/config/database.php
+*.patch
+patches/
+git-svn-diff.py
+*.bash
+*.sh
+*.swp
+.buildpath
+.project
+.settings/*
