@@ -1,4 +1,10 @@
-ospos
+
+
+este es un sistema de ventas en php totalmente codigo libre y puede ser modificado a su gusto
+— Edit 
 =====
 
-Open Source Point of Sale
+
+
+este es un sistema de ventas en php totalmente codigo libre y puede ser modificado a su gusto
+— Edit 
