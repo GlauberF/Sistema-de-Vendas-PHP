@@ -55,40 +55,41 @@ class Customers extends Person_controller
 	function save($customer_id=-1)
 	{
 		$person_data = array(
-		'first_name'=>$this->input->post('first_name'),
-		'last_name'=>$this->input->post('last_name'),
-		'email'=>$this->input->post('email'),
-		'phone_number'=>$this->input->post('phone_number'),
-		'address_1'=>$this->input->post('address_1'),
-		'address_2'=>$this->input->post('address_2'),
-		'city'=>$this->input->post('city'),
-		'state'=>$this->input->post('state'),
-		'zip'=>$this->input->post('zip'),
-		'country'=>$this->input->post('country'),
-		'comments'=>$this->input->post('comments')
-		);
+			'first_name'=>$this->input->post('first_name'),
+			'last_name'=>$this->input->post('last_name'),
+			'email'=>$this->input->post('email'),
+			'phone_number'=>$this->input->post('phone_number'),
+			'address_1'=>$this->input->post('address_1'),
+			'address_2'=>$this->input->post('address_2'),
+			'city'=>$this->input->post('city'),
+			'state'=>$this->input->post('state'),
+			'zip'=>$this->input->post('zip'),
+			'country'=>$this->input->post('country'),
+			'comments'=>$this->input->post('comments'),
+			'person_id'=>$this->input->post('person_id')
+			);
 		$customer_data=array(
-		'account_number'=>$this->input->post('account_number')=='' ? null:$this->input->post('account_number'),
-		'taxable'=>$this->input->post('taxable')=='' ? 0:1,
-		);
+			'account_number'=>$this->input->post('account_number')=='' ? null:$this->input->post('account_number'),
+			'taxable'=>$this->input->post('taxable')=='' ? 0:1,
+			);
 		if($this->Customer->save($person_data,$customer_data,$customer_id))
 		{
 			//New customer
 			if($customer_id==-1)
 			{
 				echo json_encode(array('success'=>true,'message'=>$this->lang->line('customers_successful_adding').' '.
-				$person_data['first_name'].' '.$person_data['last_name'],'person_id'=>$customer_data['person_id']));
+					$person_data['first_name'].' '.$person_data['last_name'],'person_id'=>$customer_data['person_id']));
 			}
 			else //previous customer
 			{
 				echo json_encode(array('success'=>true,'message'=>$this->lang->line('customers_successful_updating').' '.
-				$person_data['first_name'].' '.$person_data['last_name'],'person_id'=>$customer_id));
+					$person_data['first_name'].' '.$person_data['last_name'],'person_id'=>$customer_id));
 			}
 		}
 		else//failure
 		{	
 			echo json_encode(array('success'=>false,'message'=>$this->lang->line('customers_error_adding_updating').' '.
-			$person_data['first_name'].' '.$person_data['last_name'],'person_id'=>-1));
+				$person_data['first_name'].' '.$person_data['last_name'],'person_id'=>-1));
 		}
 	}
 	
@@ -102,7 +103,7 @@ class Customers extends Person_controller
 		if($this->Customer->delete_list($customers_to_delete))
 		{
 			echo json_encode(array('success'=>true,'message'=>$this->lang->line('customers_successful_deleted').' '.
-			count($customers_to_delete).' '.$this->lang->line('customers_one_or_multiple')));
+				count($customers_to_delete).' '.$this->lang->line('customers_one_or_multiple')));
 		}
 		else
 		{
@@ -143,23 +144,24 @@ class Customers extends Person_controller
 				while (($data = fgetcsv($handle)) !== FALSE) 
 				{
 					$person_data = array(
-					'first_name'=>$data[0],
-					'last_name'=>$data[1],
-					'email'=>$data[2],
-					'phone_number'=>$data[3],
-					'address_1'=>$data[4],
-					'address_2'=>$data[5],
-					'city'=>$data[6],
-					'state'=>$data[7],
-					'zip'=>$data[8],
-					'country'=>$data[9],
-					'comments'=>$data[10]
-					);
+						'first_name'=>$data[0],
+						'last_name'=>$data[1],
+						'email'=>$data[2],
+						'phone_number'=>$data[3],
+						'address_1'=>$data[4],
+						'address_2'=>$data[5],
+						'city'=>$data[6],
+						'state'=>$data[7],
+						'zip'=>$data[8],
+						'country'=>$data[9],
+						'comments'=>$data[10],
+						'person_id'=>$data[11]
+						);
 					
 					$customer_data=array(
-					'account_number'=>$data[11]=='' ? null:$data[11],
-					'taxable'=>$data[12]=='' ? 0:1,
-					);
+						'account_number'=>$data[11]=='' ? null:$data[11],
+						'taxable'=>$data[12]=='' ? 0:1,
+						);
 					
 					if(!$this->Customer->save($person_data,$customer_data))
 					{	

@@ -6,6 +6,7 @@ $lang['common_powered_by'] = 'Potenciado por';
 $lang['common_welcome'] = 'Bienvenido(a)';
 $lang['common_logout'] = 'Salir';
 $lang['common_list_of'] = 'Lista de';
+$lang['common_person_id'] = 'DNI';
 $lang['common_first_name'] = 'Nombre';
 $lang['common_last_name'] = 'Apellidos';
 $lang['common_email'] = 'E-Mail';

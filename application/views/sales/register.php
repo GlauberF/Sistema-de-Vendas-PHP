@@ -256,7 +256,7 @@
 
 <div id="Payment_Types" >
 
-	<div style="height:100px;">
+	<div>
 
 		<?php echo form_open("sales/add_payment",array('id'=>'add_payment_form')); ?>
 		<table width="100%">

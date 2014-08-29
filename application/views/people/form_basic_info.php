@@ -1,3 +1,15 @@
+
+<div class="field_row clearfix">	
+<?php echo form_label($this->lang->line('common_person_id').':', 'person_id',array('class'=>'required')); ?>
+	<div class='form_field'>
+	<?php echo form_input(array(
+		'name'=>'person_id',
+		'id'=>'person_id',
+		'value'=>$person_info->person_id));?>
+	</div>
+</div>
+
+
 <div class="field_row clearfix">	
 <?php echo form_label($this->lang->line('common_first_name').':', 'first_name',array('class'=>'required')); ?>
 	<div class='form_field'>
@@ -112,3 +124,9 @@
 	);?>
 	</div>
 </div>
+
+
+
+
+
+
