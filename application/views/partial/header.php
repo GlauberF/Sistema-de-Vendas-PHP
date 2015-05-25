@@ -67,5 +67,5 @@
 				<?php echo date('F d, Y h:i a') ?>
 			</div>
 		</div>
-		<div id="content_area_wrapper">
-			<div id="content_area">
+		<div id="content_area_wrapper" >
+			<div id="content_area" class="container">

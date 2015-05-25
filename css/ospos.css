@@ -27,16 +27,13 @@ a.none
 
 #content_area_wrapper
 {
-margin: 0;padding: 0;background: #f4f4f4;
+margin: 0;padding: 0;
 
 }
 
 #content_area
 {
-	position:relative;
-	margin:0 auto;
-	width:90%;
-	text-align:left;padding-top: 10px;
+margin-top: 20px;
 	
 }
 
@@ -154,4 +151,7 @@ width: 109px;}
 	color:#777777;
 	clear:both;
 	
+}
+table {
+  border: 1px solid #d3d3d3;
 }

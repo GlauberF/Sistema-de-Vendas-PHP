@@ -69,7 +69,7 @@ function post_giftcard_form_submit(response)
 <?php echo $this->pagination->create_links();?>
 <div id="table_action_header">
 	<ul>
-		<li class="float_left"><span><?php echo anchor("$controller_name/delete",$this->lang->line("common_delete"),array('id'=>'delete')); ?></span></li>
+		<li class="float_left"><?php echo anchor("$controller_name/delete",$this->lang->line("common_delete"),array('id'=>'delete','class'=>'btn btn-primary')); ?></li>
 		<li class="float_right">
 		<img src='<?php echo base_url()?>images/spinner_small.gif' alt='spinner' id='spinner' />
 		<?php echo form_open("$controller_name/search",array('id'=>'search_form')); ?>
@@ -78,6 +78,11 @@ function post_giftcard_form_submit(response)
 		</li>
 	</ul>
 </div>
+
+
+
+
+
 
 <div id="table_holder">
 <?php echo $manage_table; ?>

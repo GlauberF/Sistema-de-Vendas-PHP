@@ -151,9 +151,9 @@ function show_hide_search_filter(search_filter_section, switchImgTag) {
 <?php echo $this->pagination->create_links();?>
 <div id="table_action_header">
 	<ul>
-		<li class="float_left"><span><?php echo anchor("$controller_name/delete",$this->lang->line("common_delete"),array('id'=>'delete')); ?></span></li>
-		<li class="float_left"><span><?php echo anchor("$controller_name/bulk_edit/width:$form_width",$this->lang->line("items_bulk_edit"),array('id'=>'bulk_edit','title'=>$this->lang->line('items_edit_multiple_items'))); ?></span></li>
-		<li class="float_left"><span><?php echo anchor("$controller_name/generate_barcodes",$this->lang->line("items_generate_barcodes"),array('id'=>'generate_barcodes', 'target' =>'_blank','title'=>$this->lang->line('items_generate_barcodes'))); ?></span></li>
+		<li class="float_left"><?php echo anchor("$controller_name/delete",$this->lang->line("common_delete"),array('id'=>'delete','class'=>'btn btn-primary')); ?></li>
+		<li class="float_left"><?php echo anchor("$controller_name/bulk_edit/width:$form_width",$this->lang->line("items_bulk_edit"),array('id'=>'bulk_edit','class'=>'btn btn-primary','title'=>$this->lang->line('items_edit_multiple_items'))); ?></li>
+		<li class="float_left"><?php echo anchor("$controller_name/generate_barcodes",$this->lang->line("items_generate_barcodes"),array('id'=>'generate_barcodes','class'=>'btn btn-primary', 'target' =>'_blank','title'=>$this->lang->line('items_generate_barcodes'))); ?></li>
 		<li class="float_right">
 		<img src='<?php echo base_url()?>images/spinner_small.gif' alt='spinner' id='spinner' />
 		<?php echo form_open("$controller_name/search",array('id'=>'search_form')); ?>
@@ -162,7 +162,6 @@ function show_hide_search_filter(search_filter_section, switchImgTag) {
 		</li>
 	</ul>
 </div>
-
 <div id="table_holder">
 <?php echo $manage_table; ?>
 </div>

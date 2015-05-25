@@ -2,19 +2,24 @@
 /*
 Gets the html table to manage people.
 */
+
+
+
+
+
 function get_people_manage_table($people,$controller)
 {
 	$CI =& get_instance();
-	$table='<table class="tablesorter" id="sortable_table">';
+	$table='<table class="table table-bordered" id="sortable_table">';
 	
 	$headers = array('<input type="checkbox" id="select_all" />', 
-	$CI->lang->line('common_last_name'),
-	$CI->lang->line('common_first_name'),
-	$CI->lang->line('common_email'),
-	$CI->lang->line('common_phone_number'),
-	'&nbsp');
+		$CI->lang->line('common_last_name'),
+		$CI->lang->line('common_first_name'),
+		$CI->lang->line('common_email'),
+		$CI->lang->line('common_phone_number'),
+		'&nbsp');
 	
-	$table.='<thead><tr>';
+	$table.='<thead><tr class="well">';
 	foreach($headers as $header)
 	{
 		$table.="<th>$header</th>";
@@ -84,17 +89,17 @@ Gets the html table to manage suppliers.
 function get_supplier_manage_table($suppliers,$controller)
 {
 	$CI =& get_instance();
-	$table='<table class="tablesorter" id="sortable_table">';
+	$table='<table class=" table table-bordered " id="sortable_table">';
 	
 	$headers = array('<input type="checkbox" id="select_all" />',
-	$CI->lang->line('suppliers_company_name'),
-	$CI->lang->line('common_last_name'),
-	$CI->lang->line('common_first_name'),
-	$CI->lang->line('common_email'),
-	$CI->lang->line('common_phone_number'),
-	'&nbsp');
+		$CI->lang->line('suppliers_company_name'),
+		$CI->lang->line('common_last_name'),
+		$CI->lang->line('common_first_name'),
+		$CI->lang->line('common_email'),
+		$CI->lang->line('common_phone_number'),
+		'&nbsp');
 	
-	$table.='<thead><tr>';
+	$table.='<thead><tr class="well">';
 	foreach($headers as $header)
 	{
 		$table.="<th>$header</th>";
@@ -151,21 +156,21 @@ Gets the html table to manage items.
 function get_items_manage_table($items,$controller)
 {
 	$CI =& get_instance();
-	$table='<table class="tablesorter" id="sortable_table">';
+	$table='<table class="table table-bordered" id="sortable_table">';
 	
 	$headers = array('<input type="checkbox" id="select_all" />', 
-	$CI->lang->line('items_item_number'),
-	$CI->lang->line('items_name'),
-	$CI->lang->line('items_category'),
-	$CI->lang->line('items_cost_price'),
-	$CI->lang->line('items_unit_price'),
-	$CI->lang->line('items_tax_percents'),
-	$CI->lang->line('items_quantity'),
-	'&nbsp;',
-	$CI->lang->line('items_inventory')
-	);
+		$CI->lang->line('items_item_number'),
+		$CI->lang->line('items_name'),
+		$CI->lang->line('items_category'),
+		$CI->lang->line('items_cost_price'),
+		$CI->lang->line('items_unit_price'),
+		$CI->lang->line('items_tax_percents'),
+		$CI->lang->line('items_quantity'),
+		'&nbsp;',
+		$CI->lang->line('items_inventory')
+		);
 	
-	$table.='<thead><tr>';
+	$table.='<thead><tr class="well">';
 	foreach($headers as $header)
 	{
 		$table.="<th>$header</th>";
@@ -236,17 +241,17 @@ function get_giftcards_manage_table( $giftcards, $controller )
 {
 	$CI =& get_instance();
 	
-	$table='<table class="tablesorter" id="sortable_table">';
+	$table='<table class="table table-bordered" id="sortable_table">';
 	
 	$headers = array('<input type="checkbox" id="select_all" />', 
-	$CI->lang->line('common_last_name'),
-	$CI->lang->line('common_first_name'),
-	$CI->lang->line('giftcards_giftcard_number'),
-	$CI->lang->line('giftcards_card_value'),
-	'&nbsp', 
-	);
+		$CI->lang->line('common_last_name'),
+		$CI->lang->line('common_first_name'),
+		$CI->lang->line('giftcards_giftcard_number'),
+		$CI->lang->line('giftcards_card_value'),
+		'&nbsp', 
+		);
 	
-	$table.='<thead><tr>';
+	$table.='<thead><tr class="well">';
 	foreach($headers as $header)
 	{
 		$table.="<th>$header</th>";
@@ -305,15 +310,15 @@ function get_item_kits_manage_table( $item_kits, $controller )
 {
 	$CI =& get_instance();
 	
-	$table='<table class="tablesorter" id="sortable_table">';
+	$table='<table class="table table-bordered" id="sortable_table">';
 	
 	$headers = array('<input type="checkbox" id="select_all" />', 
-	$CI->lang->line('item_kits_name'),
-	$CI->lang->line('item_kits_description'),
-	'&nbsp', 
-	);
+		$CI->lang->line('item_kits_name'),
+		$CI->lang->line('item_kits_description'),
+		'&nbsp', 
+		);
 	
-	$table.='<thead><tr>';
+	$table.='<thead><tr class="well">';
 	foreach($headers as $header)
 	{
 		$table.="<th>$header</th>";

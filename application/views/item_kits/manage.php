@@ -81,8 +81,8 @@ function post_item_kit_form_submit(response)
 <?php echo $this->pagination->create_links();?>
 <div id="table_action_header">
 	<ul>
-		<li class="float_left"><span><?php echo anchor("$controller_name/delete",$this->lang->line("common_delete"),array('id'=>'delete')); ?></span></li>
-		<li class="float_left"><span><?php echo anchor("$controller_name/generate_barcodes",$this->lang->line("items_generate_barcodes"),array('id'=>'generate_barcodes', 'target' =>'_blank','title'=>$this->lang->line('items_generate_barcodes'))); ?></span></li>
+		<li class="float_left"><?php echo anchor("$controller_name/delete",$this->lang->line("common_delete"),array('id'=>'delete','class'=>'btn btn-primary')); ?></li>
+		<li class="float_left"><?php echo anchor("$controller_name/generate_barcodes",$this->lang->line("items_generate_barcodes"),array('id'=>'generate_barcodes','class'=>'btn btn-primary', 'target' =>'_blank','title'=>$this->lang->line('items_generate_barcodes'))); ?></li>
 		<li class="float_right">
 		<img src='<?php echo base_url()?>images/spinner_small.gif' alt='spinner' id='spinner' />
 		<?php echo form_open("$controller_name/search",array('id'=>'search_form')); ?>

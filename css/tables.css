@@ -1,16 +1,4 @@
-#table_action_header
-{
-	position:relative;
-	width:100%;
-	background-color:#EEEEEE;
-	background-image:url(../images/checkbox_arrow.gif);
-	height:20px;
-	border-top:1px solid #CCCCCC;	
-	background-position:5px 10px;
-	background-repeat:no-repeat;	
-	padding:5px 0px 5px 0px;
-}
-
+#table_action_header{background-color: #eeeeee;background-image: url("../images/checkbox_arrow.gif");background-position: 5px 10px;background-repeat: no-repeat;border: 1px solid #d3d3d3;border-radius: 5px;height: 20px;margin-bottom: 5px;margin-top: 5px;padding: 1%;position: relative;width: 98%;}
 #table_action_header ul
 {
 	list-style:none;
