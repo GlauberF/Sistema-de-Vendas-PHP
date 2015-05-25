@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-12-2014 a las 14:28:35
+-- Tiempo de generación: 25-05-2015 a las 16:15:40
 -- Versión del servidor: 5.6.21
 -- Versión de PHP: 5.6.3
 
@@ -124,7 +124,7 @@ CREATE TABLE IF NOT EXISTS `ospos_inventory` (
   `trans_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `trans_comment` text NOT NULL,
   `trans_inventory` int(11) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB AUTO_INCREMENT=59 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=60 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `ospos_inventory`
@@ -188,7 +188,8 @@ INSERT INTO `ospos_inventory` (`trans_id`, `trans_items`, `trans_user`, `trans_d
 (55, 33, 1, '2014-08-18 14:24:31', 'POS 5', -1),
 (56, 26, 1, '2014-08-18 14:27:46', 'POS 6', -1),
 (57, 32, 1, '2014-08-18 14:27:46', 'POS 6', -2),
-(58, 30, 1, '2014-08-18 14:33:14', 'POS 7', -1);
+(58, 30, 1, '2014-08-18 14:33:14', 'POS 7', -1),
+(59, 28, 1, '2014-12-04 13:45:07', 'POS 8', -1);
 
 -- --------------------------------------------------------
 
@@ -255,7 +256,7 @@ INSERT INTO `ospos_items` (`name`, `category`, `supplier_id`, `item_number`, `de
 ('Producto 01', 'Golosinas', NULL, 'p-001', '', '10.00', '12.00', '1.00', '2.00', '', 25, 0, 0, 0, '0', '0', '0', '0', '0', '0', '0', '0', '0', '0'),
 ('Producto 02', 'Golosinas', NULL, 'p-002', '', '10.00', '12.00', '9.00', '2.00', '', 26, 0, 0, 0, '', '', '', '', '', '', '', '', '', ''),
 ('Producto 03', 'Golosinas', NULL, 'p-003', '', '10.00', '12.00', '10.00', '2.00', '', 27, 0, 0, 0, '', '', '', '', '', '', '', '', '', ''),
-('Producto 04', 'Golosinas', NULL, 'p-004', '', '10.00', '12.00', '10.00', '2.00', '', 28, 0, 0, 0, '', '', '', '', '', '', '', '', '', ''),
+('Producto 04', 'Golosinas', NULL, 'p-004', '', '10.00', '12.00', '9.00', '2.00', '', 28, 0, 0, 0, '', '', '', '', '', '', '', '', '', ''),
 ('Producto 05', 'Golosinas', NULL, 'p-005', '', '10.00', '12.00', '9.00', '2.00', '', 29, 0, 0, 0, '', '', '', '', '', '', '', '', '', ''),
 ('Producto 06', 'Golosinas', NULL, 'p-006', '', '10.00', '12.00', '9.00', '2.00', '', 30, 0, 0, 0, '', '', '', '', '', '', '', '', '', ''),
 ('Producto 07', 'Golosinas', NULL, 'p-007', '', '10.00', '12.00', '10.00', '2.00', '', 31, 0, 0, 0, '', '', '', '', '', '', '', '', '', ''),
@@ -438,7 +439,7 @@ CREATE TABLE IF NOT EXISTS `ospos_sales` (
   `comment` text NOT NULL,
 `sale_id` int(10) NOT NULL,
   `payment_type` varchar(512) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `ospos_sales`
@@ -451,7 +452,8 @@ INSERT INTO `ospos_sales` (`sale_time`, `customer_id`, `employee_id`, `comment`,
 ('2014-08-18 14:23:40', NULL, 1, '0', 4, 'Efectivo: S/.0.00<br />'),
 ('2014-08-18 14:24:31', NULL, 1, '', 5, 'Efectivo: S/.0.00<br />'),
 ('2014-08-18 14:27:46', NULL, 1, '0', 6, 'Efectivo: S/.36.00<br />'),
-('2014-08-18 14:33:13', NULL, 1, '0', 7, 'Efectivo: S/.12.00<br />');
+('2014-08-18 14:33:13', NULL, 1, '0', 7, 'Efectivo: S/.12.00<br />'),
+('2014-12-04 13:45:07', NULL, 1, '0', 8, 'Efectivo: S/.62.00<br />');
 
 -- --------------------------------------------------------
 
@@ -485,7 +487,8 @@ INSERT INTO `ospos_sales_items` (`sale_id`, `item_id`, `description`, `serialnum
 (5, 33, '', '', 1, '1.00', '0.00', '0.00', '0.00'),
 (6, 26, '', '', 1, '1.00', '10.00', '12.00', '0.00'),
 (6, 32, '0', '0', 2, '2.00', '10.00', '12.00', '0.00'),
-(7, 30, '', '', 1, '1.00', '10.00', '12.00', '0.00');
+(7, 30, '', '', 1, '1.00', '10.00', '12.00', '0.00'),
+(8, 28, '', '', 1, '1.00', '10.00', '12.00', '0.00');
 
 -- --------------------------------------------------------
 
@@ -524,7 +527,8 @@ INSERT INTO `ospos_sales_payments` (`sale_id`, `payment_type`, `payment_amount`)
 (4, 'Efectivo', '0.00'),
 (5, 'Efectivo', '0.00'),
 (6, 'Efectivo', '36.00'),
-(7, 'Efectivo', '12.00');
+(7, 'Efectivo', '12.00'),
+(8, 'Efectivo', '62.00');
 
 -- --------------------------------------------------------
 
@@ -604,8 +608,11 @@ CREATE TABLE IF NOT EXISTS `ospos_sessions` (
 --
 
 INSERT INTO `ospos_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
+('1d5ef3bbce79f8338884f1a897d64fee', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:38.0) Gecko/20100101 Firefox/38.0', 1432562205, 'a:6:{s:9:"user_data";s:0:"";s:9:"person_id";s:1:"1";s:4:"cart";a:0:{}s:9:"sale_mode";s:4:"sale";s:8:"customer";i:-1;s:8:"payments";a:0:{}}'),
+('25803ebeda668bd39c3f7b956680bca1', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:35.0) Gecko/20100101 Firefox/35.0', 1423081969, ''),
 ('305564432c84c0468280b4cba0cfeec5', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:31.0) Gecko/20100101 Firefox/31.0', 1409156091, 'a:6:{s:9:"user_data";s:0:"";s:9:"person_id";s:1:"1";s:4:"cart";a:0:{}s:9:"sale_mode";s:4:"sale";s:8:"customer";i:-1;s:8:"payments";a:0:{}}'),
 ('7131a6a99b241667ace3073adf985406', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.125 Safari/537.36', 1408110754, 'a:5:{s:9:"user_data";s:0:"";s:9:"person_id";s:1:"1";s:8:"cartRecv";a:0:{}s:9:"recv_mode";s:7:"receive";s:8:"supplier";i:-1;}'),
+('8568d9219c9351b017c75b5b09a51fe4', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:35.0) Gecko/20100101 Firefox/35.0', 1421779775, ''),
 ('9c48bded1f725b296004445850c4d904', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:33.0) Gecko/20100101 Firefox/33.0', 1417698617, 'a:2:{s:9:"user_data";s:0:"";s:9:"person_id";s:1:"1";}'),
 ('aed7446c74abc5153d4b121a642fd8d5', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36', 1417698747, 'a:9:{s:9:"user_data";s:0:"";s:9:"person_id";s:1:"1";s:8:"cartRecv";a:0:{}s:9:"recv_mode";s:7:"receive";s:8:"supplier";i:-1;s:4:"cart";a:0:{}s:9:"sale_mode";s:4:"sale";s:8:"customer";i:-1;s:8:"payments";a:0:{}}');
 
@@ -783,7 +790,7 @@ MODIFY `giftcard_id` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT de la tabla `ospos_inventory`
 --
 ALTER TABLE `ospos_inventory`
-MODIFY `trans_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=59;
+MODIFY `trans_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=60;
 --
 -- AUTO_INCREMENT de la tabla `ospos_items`
 --
@@ -808,7 +815,7 @@ MODIFY `receiving_id` int(10) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT de la tabla `ospos_sales`
 --
 ALTER TABLE `ospos_sales`
-MODIFY `sale_id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+MODIFY `sale_id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT de la tabla `ospos_sales_suspended`
 --
