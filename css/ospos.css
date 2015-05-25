@@ -33,8 +33,11 @@ margin: 0;padding: 0;
 
 #content_area
 {
+border-radius: 5px;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16), 0 2px 10px rgba(0, 0, 0, 0.12);
 margin-top: 20px;
-	
+padding: 20px;
+background: #ffffff;	
 }
 
 #title_bar
@@ -155,3 +158,5 @@ width: 109px;}
 table {
   border: 1px solid #d3d3d3;
 }
+
+body{background: #FF9800 !important;}

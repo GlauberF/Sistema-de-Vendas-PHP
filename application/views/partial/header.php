@@ -68,4 +68,4 @@
 			</div>
 		</div>
 		<div id="content_area_wrapper" >
-			<div id="content_area" class="container">
+			<div id="content_area" class="container .bs-item">
