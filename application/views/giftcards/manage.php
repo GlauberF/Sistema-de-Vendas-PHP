@@ -61,8 +61,8 @@ function post_giftcard_form_submit(response)
 	<div id="title" class="float_left"><?php echo $this->lang->line('common_list_of').' '.$this->lang->line('module_'.$controller_name); ?></div>
 	<div id="new_button">
 		<?php echo anchor("$controller_name/view/-1/width:$form_width",
-		"<div class='big_button' style='float: left;'><span>".$this->lang->line($controller_name.'_new')."</span></div>",
-		array('class'=>'thickbox none','title'=>$this->lang->line($controller_name.'_new')));
+		"".$this->lang->line($controller_name.'_new')."",
+		array('class'=>'thickbox none btn btn-primary','title'=>$this->lang->line($controller_name.'_new')));
 		?>
 	</div>
 </div>
