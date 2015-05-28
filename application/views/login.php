@@ -2,6 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" rev="stylesheet" href="<?php echo base_url();?>css/bootstrap.css" />
 	<link rel="stylesheet" rev="stylesheet" href="<?php echo base_url();?>css/login.css" />
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<title>Open Source Point Of Sale <?php echo $this->lang->line('login_login'); ?></title>
@@ -14,7 +15,11 @@
 	</script>
 </head>
 <body>
-	<h1>Open Source Point Of Sale <?php echo $this->config->item('application_version'); ?></h1>
+
+	<h1>Sistema de Ventas</h1>
+	<div class="logo">
+	<img src="<?php echo base_url();?>images/logo.png" alt="" />
+	</div>
 	<?php echo form_open('login') ?>
 	<div id="container">
 		<?php echo validation_errors(); ?>
@@ -28,20 +33,25 @@
 			<div class="form_field_label"><?php echo $this->lang->line('login_username'); ?>: </div>
 			<div class="form_field">
 				<?php echo form_input(array(
+					'class'=>'form-control', 
 					'name'=>'username', 
 					'size'=>'20')); ?>
 				</div>
 				<div class="form_field_label"><?php echo $this->lang->line('login_password'); ?>: </div>
 				<div class="form_field">
 					<?php echo form_password(array(
+						'class'=>'form-control', 
 						'name'=>'password', 
 						'size'=>'20')); ?>
 					</div>
 					<div id="submit_button">
-						<?php echo form_submit('loginButton','Go'); ?>
+						<?php echo form_submit(array(
+							'name'=>'loginButton',
+							'value'=>'Aceptar',
+							'class'=>'btn btn-lg btn-primary btn-block')); ?>
+						</div>
 					</div>
 				</div>
-			</div>
-			<?php echo form_close(); ?>
-		</body>
-		</html>
+				<?php echo form_close(); ?>
+			</body>
+			</html>

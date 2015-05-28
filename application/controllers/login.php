@@ -15,7 +15,7 @@ class Login extends CI_Controller
 		else
 		{
 			$this->form_validation->set_rules('username', 'lang:login_undername', 'callback_login_check');
-    	    $this->form_validation->set_error_delimiters('<div class="error">', '</div>');
+    	    $this->form_validation->set_error_delimiters('<div class="error alert alert-danger">', '</div>');
 			
 			if($this->form_validation->run() == FALSE)
 			{
