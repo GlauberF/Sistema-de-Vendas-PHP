@@ -6,11 +6,13 @@
 	<base href="<?php echo base_url();?>" />
 	<title><?php echo $this->config->item('company').' -- '.$this->lang->line('common_powered_by').' OS Point Of Sale' ?></title>
 	<link rel="stylesheet" rev="stylesheet" href="<?php echo base_url();?>css/ospos.css" />
-	<link rel="stylesheet" rev="stylesheet" href="<?php echo base_url();?>css/bootstrap.css" />
-	<link rel="stylesheet" rev="stylesheet" href="<?php echo base_url();?>css/bootstrap-responsive.css" />
 	<link rel="stylesheet" rev="stylesheet" href="<?php echo base_url();?>css/ospos_print.css"  media="print"/>
+	<link rel="stylesheet" rev="stylesheet" href="<?php echo base_url();?>css/bootstrap.css" />
+
 	<script>BASE_URL = '<?php echo site_url(); ?>';</script>
-	<script src="<?php echo base_url();?>js/jquery-1.2.6.min.js" type="text/javascript" language="javascript" charset="UTF-8"></script>
+
+	<script src="<?php echo base_url();?>js/jquery-1.9.1.js" type="text/javascript" language="javascript" charset="UTF-8"></script>
+	<script src="<?php echo base_url();?>js/jquery-migrate-1.1.0.js" type="text/javascript" language="javascript" charset="UTF-8"></script>
 	<script src="<?php echo base_url();?>js/jquery.color.js" type="text/javascript" language="javascript" charset="UTF-8"></script>
 	<script src="<?php echo base_url();?>js/jquery.metadata.js" type="text/javascript" language="javascript" charset="UTF-8"></script>
 	<script src="<?php echo base_url();?>js/jquery.form.js" type="text/javascript" language="javascript" charset="UTF-8"></script>
@@ -26,6 +28,7 @@
 	<script src="<?php echo base_url();?>js/swfobject.js" type="text/javascript" language="javascript" charset="UTF-8"></script>
 	<script src="<?php echo base_url();?>js/date.js" type="text/javascript" language="javascript" charset="UTF-8"></script>
 	<script src="<?php echo base_url();?>js/datepicker.js" type="text/javascript" language="javascript" charset="UTF-8"></script>
+	<script src="<?php echo base_url();?>js/bootstrap.js" type="text/javascript" language="javascript" charset="UTF-8"></script>
 	
 	<style type="text/css">
 		html {
@@ -35,37 +38,38 @@
 
 </head>
 <body>
-	<div id="menubar">
-
-		<div id="menubar_container">
 
 
-			<div id="menubar_navigation">
-				<?php
-				foreach($allowed_modules->result() as $module)
-				{
-					?>
-					<div class="menu_item">
-						<a href="<?php echo site_url("$module->module_id");?>">
-							<img src="<?php echo base_url().'images/menubar/'.$module->module_id.'.png';?>" border="0" alt="Menubar Image" /></a><br />
-							<a href="<?php echo site_url("$module->module_id");?>"><?php echo $this->lang->line("module_".$module->module_id) ?></a>
-						</div>
-						<?php
-					}
-					?>
-				</div>
 
-				
-
+	
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="#" class="navbar-brand">Project name</a>
 			</div>
-			<div id="menubar_footer">
-				<?php echo $this->lang->line('common_welcome')." $user_info->first_name $user_info->last_name! | "; ?>
-				<?php echo anchor("home/logout",$this->lang->line("common_logout")); ?>
-			</div>
-
-			<div id="menubar_date">
-				<?php echo date('F d, Y h:i a') ?>
-			</div>
-		</div>
-		<div id="content_area_wrapper" >
-			<div id="content_area" class="container .bs-item">
+			<div class="navbar-collapse collapse" id="navbar">
+				<ul class="nav navbar-nav">
+					<?php foreach($allowed_modules->result() as $module){ ?>
+					<li class="menu_item">
+						<!-- <a href="<?php //echo site_url("$module->module_id");?>"><img src="<?php //echo base_url().'images/menubar/'.$module->module_id.'.png';?>" border="0" alt="Menubar Image" /></a><br /> -->
+						<a href="<?php echo site_url("$module->module_id");?>" ><?php echo $this->lang->line("module_".$module->module_id) ?></a>
+					</li>
+					<?php } ?>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a><?php echo date('F d, Y h:i a') ?></a></li>
+					<li> <a> <?php echo $this->lang->line('common_welcome')." $user_info->first_name $user_info->last_name! | "; ?></a></li>
+					<li><?php echo anchor("home/logout",$this->lang->line("common_logout")); ?></li>
+				</ul>
+			</div><!--/.nav-collapse -->
+		</div><!--/.container-fluid -->
+	</nav>
+	
+	<div id="content_area_wrapper" >
+		<div id="content_area" class="container .bs-item">
