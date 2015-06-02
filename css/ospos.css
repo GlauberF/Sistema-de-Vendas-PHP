@@ -137,4 +137,5 @@ body{background: #FF9800 !important;}
 #config_wrapper .field_row label{padding: 5px;text-align: right;width: 300px;}
 #config_wrapper .field_row input{width: 300px;margin-bottom: 5px;}
 #config_wrapper .field_row.checbox input{width: auto;}
-
+.content-form,
+.content-btn{text-align: right;padding: 5px;}
