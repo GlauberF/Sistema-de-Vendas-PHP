@@ -1,3 +1,4 @@
+## ------------ discontinued -----------------
 
 Este é um sistema de vendas completamente em php gratuito e pode ser modificado para o seu gosto.
 Usuário : admin 
